@@ -6,11 +6,11 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_14
+    sourceCompatibility = JavaVersion.VERSION_13
     targetCompatibility = JavaVersion.VERSION_13
 }
 
-val moduleName = "org.github.asyncmc.protocol.bedrock"
+val moduleName = "com.github.asyncmc.internal.core"
 
 repositories {
     jcenter()
@@ -56,6 +56,8 @@ dependencies {
     api(kotlin("stdlib-jdk8", embeddedKotlinVersion))
     api(kotlin("reflect", embeddedKotlinVersion))
 
+    implementation("com.github.ajalt:clikt:2.7.1")
+    
     testImplementation(kotlin("test-junit5", embeddedKotlinVersion))
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0-M1")
