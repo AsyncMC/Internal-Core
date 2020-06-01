@@ -1,6 +1,6 @@
-@file:JvmName("AsyncMCLoader")
+@file:JvmName("AsyncMCBootLoader")
 
-package com.github.asyncmc.core
+package com.github.asyncmc.core.boot
 
 import com.github.ajalt.clikt.core.CliktCommand
 

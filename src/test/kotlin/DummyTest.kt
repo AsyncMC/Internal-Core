@@ -1,4 +1,4 @@
-import dummy.Dummy
+import com.github.asyncmc.core.dummy.Dummy
 import org.junit.jupiter.api.Test
 
 internal class DummyTest {
