@@ -1,9 +1,9 @@
 module com.github.asyncmc.internal.core {
-    requires com.github.asyncmc.module.api;
-    uses com.github.asyncmc.module.api.AsyncMcModule;
+    requires transitive com.github.asyncmc.module.api;
+    uses com.github.asyncmc.module.api.ModuleLoader;
 
-    requires kotlin.stdlib;
-    requires clikt.jvm;
+    requires static clikt.jvm;
+    requires kotlin.inline.logger.jvm;
 
     exports com.github.asyncmc.core.boot;
 }

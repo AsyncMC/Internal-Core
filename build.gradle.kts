@@ -34,7 +34,7 @@ tasks.withType<JavaCompile>().configureEach {
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = "15"
-        freeCompilerArgs += "-Xopt-in=kotlin.contracts.ExperimentalContracts"
+        freeCompilerArgs += "-Xopt-in=kotlin.contracts.ExperimentalContracts,com.github.asyncmc.module.api.InternalModuleApi"
         useIR = true
     }
 }
@@ -63,11 +63,9 @@ plugins.withType<JavaPlugin>().configureEach {
 }
 
 dependencies {
-    api(kotlin("stdlib-jdk8"))
-    api(kotlin("reflect"))
+    api("com.github.asyncmc:module-api:0.1.0-SNAPSHOT")
 
-    implementation("com.github.asyncmc:module-api:0.1.0-SNAPSHOT")
-
+    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
     implementation("com.github.ajalt:clikt:2.7.1")
 
     testImplementation(kotlin("test-junit5"))
@@ -78,6 +76,7 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:3.3.3")
     testImplementation("org.mockito:mockito-inline:3.3.3")
     testImplementation("com.nhaarman:mockito-kotlin:1.6.0")
+    testImplementation("org.mockito:mockito-core:3.8.0")
 
     testImplementation("org.hamcrest:hamcrest:2.2")
     testImplementation("com.natpryce:hamkrest:1.7.0.3")
